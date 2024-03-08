@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microphone Access and Playback with Stop</title>
+</head>
+<body>
+    <h1>Listen and Play Sound from Microphone</h1>
+    <p>Click the button below to start listening to the microphone and play the sound.</p>
+    <button id="startButton">Start Listening</button>
+    <button id="stopButton" disabled>Stop Listening</button>
+    <script>
+        let audioCtx;
+        let source;
+
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Request access to the microphone
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(function(stream) {
+                    // Create an AudioContext instance
+                    audioCtx = new AudioContext();
+
+                    // Create a MediaStreamSource node
+                    source = audioCtx.createMediaStreamSource(stream);
+
+                    // Connect the source to the destination to play back the audio
+                    source.connect(audioCtx.destination);
+
+                    // Enable the stop button
+                    document.getElementById('stopButton').disabled = false;
+
+                    // Optional: Log a success message to the console
+                    console.log('Listening to microphone and playing sound...');
+                })
+                .catch(function(err) {
+                    // Handle errors
+                    console.error('Error accessing microphone:', err);
+                });
+        });
+
+        document.getElementById('stopButton').addEventListener('click', function() {
+            // Stop the audio context
+            if (audioCtx && source) {
+                source.disconnect(audioCtx.destination);
+                audioCtx.close();
+                audioCtx = null;
+                source = null;
+            }
+
+            // Disable the stop button
+            this.disabled = true;
+
+            // Optional: Log a message to the console
+            console.log('Stopped listening to microphone and stopped sound playback.');
+        });
+    </script>
+</body>
+</html>
