@@ -17,14 +17,28 @@ app.get('/', (req, res) => {
 });
 
 app.get('/sm', (req, res) => {
-  res.sendFile(__dirname + '/index-sm.html');
+  res.sendFile(__dirname + '/lcad-sm.html');
 });
 
-app.get('/receiver', (req, res) => {
-  res.sendFile(__dirname + '/receiver.html');
+app.get('/lc', (req, res) => {
+  res.sendFile(__dirname + '/lc.html');
 });
-app.get('/listen', (req, res) => {
-  res.sendFile(__dirname + '/listen.html');
+app.get('/en', (req, res) => {
+  res.sendFile(__dirname + '/entrance.html');
+});
+app.get('/lern', (req, res) => {
+  res.sendFile(__dirname + '/learning.html');
+});
+//lcad
+app.get('/lcad', (req, res) => {
+  res.sendFile(__dirname + '/lcad.html');
+});
+
+app.get('/dev', (req, res) => {
+  res.sendFile(__dirname + '/dev.html');
+});
+app.get('/gencir', (req, res) => {
+  res.sendFile(__dirname + '/gencir.html');
 });
 
 wss.on('connection', (ws) => {
@@ -46,6 +60,6 @@ wss.on('connection', (ws) => {
   });
 });
 
-server.listen(4000,'0.0.0.0', () => {
+server.listen(4002,'0.0.0.0', () => {
   console.log('Server is listening on port 4000' );
 });

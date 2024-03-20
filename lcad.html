@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"-->
+      <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+       <style>
+         .wrapper {
+         display: grid;
+         grid-template-columns: repeat(5, 1fr);
+         gap: 10px;
+         }
+      </style>
+      <title>Command & Control</title>
+   </head>
+   <body class="bg-dark">
+      <div id="" class="content mt-3">
+         <div class="container-fluid one">
+            <div class="row d-flex justify-content-center">
+               <div class="col-lg-10 col-md-5 text-center">
+                  
+                  
+                  <h3 class="text-white">Command & Control</h3>
+                  <div class="input-group mb-3">
+                     <div class="input-group-prepend">
+                       <label class="input-group-text" for="location">Location</label>
+                     </div>
+                     <select class="custom-select" id="location">                       
+                       <option value="1">Entrance</option>
+                       <option value="2">Lounge</option> 
+                       <option value="3">learning Commons</option>        
+                       <option value="4">gencir</option>                         
+                     </select>
+                   </div>
+                 <h4 class="text-white">Greatings</h4>
+                  <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                    <button id="p0" class="btn btn-success " onclick="sendCommand('0aud8', '')">Goodmorning</button>
+                    <button id="p1" type="button" class="btn btn-lg  btn-primary p1" onclick="sendCommand('0aud9', '')">Magandang Umaga</button>
+                    <button id="p2" type="button" class="btn  btn-secondary p2" onclick="sendCommand('0aud10', '')">Marhay na aga</button>
+                    <button id="p3" type="button" class="btn  btn-warning p3" onclick="sendCommand('0aud11', '')">Good Afternoon</button>
+                    <button id="p4" type="button" class="btn  btn-info p3" onclick="sendCommand('0aud12', '')">Good Day</button>
+                    <button id="p4" type="button" class="btn  btn-danger p3" onclick="sendCommand('0aud13', '')">bakit?</button>
+                 </div>
+                 <h4 class="text-white">Command</h4>
+                  <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                     <button id="p0" class="btn btn-success " onclick="sendCommand('0aud2', '')">Excuse Me</button>
+                     <button id="p1" type="button" class="btn btn-lg  btn-primary p1" onclick="sendCommand('0aud6', '')">Asan Uniform mo?</button>
+                     <button id="p2" type="button" class="btn  btn-secondary p2" onclick="sendCommand('0aud3', '')">Time in ka</button>
+                     <button id="p3" type="button" class="btn  btn-warning p3" onclick="sendCommand('0aud1', '')">Thank You</button>
+                     <button id="p4" type="button" class="btn  btn-info p3" onclick="sendCommand('0aud4', '')">Hey MIss</button>
+                     <button id="p4" type="button" class="btn  btn-danger p3" onclick="sendCommand('0aud5', '')">Hey Sir</button>
+                  </div>
+                  <h4 class="text-white">Util</h4>
+                  <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                    <button id="p0" class="btn btn-success " onclick="sendCommand('0aud7', '')">Isa isa pila</button>
+                    <button id="p1" type="button" class="btn btn-lg  btn-primary p1" onclick="sendCommand('0aud14', '')">bawal no uniform</button>
+                    <button id="p2" type="button" class="btn  btn-secondary p2" onclick="sendCommand('0aud15', '')">ok</button>
+                    <button id="p3" type="button" class="btn  btn-warning p3" onclick="sendCommand('0aud16', '')">Ingay nyo</button>
+                    <button id="p4" type="button" class="btn  btn-info p3" onclick="sendCommand('0aud17', '')">Wag nga kayo ma ingay</button>
+                    <button id="p4" type="button" class="btn  btn-danger p3" onclick="sendCommand('0aud18', '')">IN muna</button>
+                 </div>
+                 <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                  <button class="btn btn-primary " onclick="sendCommand('0aud21', '')">Ayos table & mesa</button>
+                  <button class="btn btn-secondary " onclick="sendCommand('0aud22', '')">Ayos table & mesa 2</button>
+                  <button class="btn btn-danger " onclick="sendCommand('0aud23', '')">In MUna sa Entrance</button>
+                  <button class="btn btn-warning " onclick="sendCommand('0aud24', '')">KuhaIDBox</button>
+                  <button class="btn btn-info " onclick="sendCommand('0aud25', '')">Lower Voice</button>
+                  <button class="btn btn-danger " onclick="sendCommand('0aud26', '')">Pa Ayus Table</button>
+                  <button class="btn btn-warning " onclick="sendCommand('0aud27', '')">Behave pahinga lang dito</button>
+                 </div>
+                 <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                  <button class="btn btn-primary " onclick="sendCommand('0aud29', '')">ayos opo sa sofa</button>
+                  <button class="btn btn-secondary " onclick="sendCommand('0aud30', '')">wag higa sa sahig</button>
+                  <button class="btn btn-danger " onclick="sendCommand('0aud31', '')">pa antay si boss</button>
+                  <button class="btn btn-warning " onclick="sendCommand('0aud32', '')">Iwan Sa counter</button>
+                  <button class="btn btn-info " onclick="sendCommand('0aud33', '')">Sara Pinto</button>
+                  <button class="btn btn-danger " onclick="sendCommand('0aud34', '')">narinig</button>
+                  <button class="btn btn-warning " onclick="sendCommand('0aud35', '')">hoy Bawal nga ehh</button>
+                 </div>
+                 <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                     <button class="btn btn-warning " onclick="sendCommand('0aud36', '')">lahat Mag in</button>
+                     <button class="btn btn-warning " onclick="sendCommand('0aud39', '')">PDA</button>
+                     <button class="btn btn-warning " onclick="sendCommand('0aud40', '')">Counh ayos Higa</button>
+                    <button id="p0" class="btn btn-success " onclick="sendCommand('0aud19', '')">Sandali walang papasok!</button>
+                    <button id="p0" class="btn btn-success " onclick="sendCommand('0aud20', '')">Random fname rda</button>
+                    <button  class="btn btn-success " onclick="sendCommand('0aud28', '')">Screem</button>
+                    <button  class="btn btn-success " onclick="sendCommand('0aud37', '')">Closed</button>
+                    <button  class="btn btn-success " onclick="sendCommand('0aud38', '')">Anouncement</button>
+                 </div>
+                 <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                  <button class="btn btn-warning " onclick="sendCommand('0aud41', '')">Student Conduct Mon</button>
+                  <button class="btn btn-warning " onclick="sendCommand('0aud42', '')">wag pasok sapatos</button>
+                  <button class="btn btn-warning " onclick="sendCommand('0aud43', '')">no scan Type nlng</button>
+                  <button id="p0" class="btn btn-success " onclick="sendCommand('0aud44', '')">Open Aircon</button>
+                  <button  class="btn btn-success " onclick="sendCommand('0aud45', '')">ayos sapatos</button>
+                  <button  class="btn btn-success " onclick="sendCommand('0aud46', '')">Reminder</button>
+                  
+               </div>
+
+               <div class="btn-group btn-block btn-lg" role="group" aria-label="Basic example">
+                  <div class="input-group mb-3">
+                     <input type="text" class="form-control" id="message" >
+                     <div class="input-group-append">
+                       <button class="btn btn-success" id="msgbtn" >send</button>
+                     </div>
+                   </div>
+               </div>
+              
+                  
+               </div>
+            </div>
+           
+         </div>
+      </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!--script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script-->
+       
+       <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+       
+      <!--script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script-->
+       
+       <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+       
+      <!--script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script-->
+       
+       <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+       
+      <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script-->
+       
+       <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script>
+         const socket = new WebSocket('ws://10.2.42.69:4002');
+         
+         socket.onopen = () => {
+           console.log('Connected to the server');
+         };
+
+         $('#msgbtn').on("click", function(event){
+            event.preventDefault(); // Prevents the default action
+            var location = document.getElementById('location').value; // Fixed: Added .value to get the value of the input
+            var messageInput = document.getElementById('message');
+            var message = { message: messageInput.value, location: location };
+            //console.log(message) // Fixed: Converted message object to string for alert display
+            socket.send(JSON.stringify(message));
+         });
+           
+        
+         function sendMessage() {
+           location = document.getElementById('location')
+           const messageInput = document.getElementById('message');
+           const message = { message: messageInput.value };
+           socket.send(JSON.stringify(message));
+           messageInput.value = '';
+         }
+         
+         function sendCommand(program, sts){
+            var location = document.getElementById('location').value
+            const cmd = {program: program, location: location};
+            socket.send(JSON.stringify(cmd));
+         }
+
+         //util
+         function sendUtil(program, action, value){
+            const cmval = {program: program, action: action, value: value}
+            socket.send(JSON.stringify(cmval))
+         }
+
+         
+      </script>
+      <script defer src="/assets/admin.js"></script>
+   </body>
+</html>
